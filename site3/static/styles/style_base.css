@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.logo {
+    margin: 25px;
+    height:200px;
+    width:200px;
+}
+.name {
+    height: 200px;
+
+}
+.vhod {
+    height: 100px;
+
+}
+.reg {
+    height: 100px;
+}
+.exit {
+    width: 100px;
+}
+.content {
+    display: flex;
+    max-width: 1600px;
+    height: 600px;
+    gap:30px;
+}
+.box {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+.box_category {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+
+}
+.box_recipe {
+
+    width:70%;
+}
+.about {
+    height: 180px;
+    width: 300px;
+}
+

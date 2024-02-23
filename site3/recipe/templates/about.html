@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <section>
+
+
+
+           <div class="about" style="display: flex; align-items: flex-start  ">
+                <div style="display: flex; flex-direction: column;  justify-content: center; align-content: center;">
+                     <img src="{% static 'photo.png' %}"
+                          alt="фотография разработчика">
+
+                     <img style="height: 150px" src="{% static 'dev.png' %}">
+
+           </div>
+
+
+
+    </section>
+
+{% endblock %}
