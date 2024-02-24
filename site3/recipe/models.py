@@ -2,14 +2,17 @@ from django.db import models
 
 from users.models import User
 
+
 class Category(models.Model):
     title = models.CharField(max_length=100, unique=True)
+
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = 'категории рецептов'
         verbose_name_plural = 'Категории рецептов'
+
 
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
@@ -27,7 +30,7 @@ class Recipe(models.Model):
                 f'cooking_stage:{self.cooking_stage}'
                 f'cook_time:{self.cook_time}'
                 f'author:{self.author}')
+
     class Meta:
         verbose_name = 'рецепт'
         verbose_name_plural = 'Рецепты'
-
