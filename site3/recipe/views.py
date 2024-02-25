@@ -9,15 +9,17 @@ from .models import User
 
 
 def home(request):
+    recipe_list=[]
     recipes = Recipe.objects.all()
     if len(recipes) < 5:
-        recipes_list = recipes
+        recipe_list.append(recipes)
     else:
-        recipes_list = random.sample(recipes, 5)
+         while len(recipe_list)<5:
+            recipe_list.append(random.choice(recipes))
 
     context = {
         'title': "Главная страница",
-        'recipe': recipes_list,
+        'recipe': recipe_list,
     }
     return render(request, 'index.html', context)
 

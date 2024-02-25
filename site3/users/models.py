@@ -10,7 +10,7 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    image = models.ImageField(upload_to='images/profiles')
+    # image = models.ImageField(upload_to='images/profiles')
     date_joined = models.DateTimeField(auto_now_add=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -26,7 +26,7 @@ class User(AbstractUser):
         verbose_name = 'Параметры пользователя'
         verbose_name_plural ='Пользователи'
 
- def get_absolute_url(self):
+    def get_absolute_url(self):
         return reverse('Recipe',
                        args=[self.created_at.strftime('%Y'),
                              self.created_at.strftime('%m'),

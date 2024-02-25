@@ -46,7 +46,7 @@ from .models import User
 class RegForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password', 'image', ]
+        fields = ['username', 'first_name', 'last_name', 'email', 'password',]
 
 
 class UploadPhotoForm(forms.Form):
