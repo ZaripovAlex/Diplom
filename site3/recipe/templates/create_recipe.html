@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
 <img src="{% static 'reg_user.png' %}">
-<form method="post">
+<form action="{% url 'Create recipe' %}" method="post">
   {% csrf_token %}
   {{ form.as_ul }}
   <button type="submit">Log In</button>

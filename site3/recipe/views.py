@@ -5,16 +5,15 @@ from django.views.generic import CreateView
 
 from .forms import CreteRecipe, SearchForm
 from .models import Recipe, Category
-from .models import User
 
 
 def home(request):
-    recipe_list=[]
+    recipe_list = []
     recipes = Recipe.objects.all()
     if len(recipes) < 5:
         recipe_list.append(recipes)
     else:
-         while len(recipe_list)<5:
+        while len(recipe_list) < 5:
             recipe_list.append(random.choice(recipes))
 
     context = {
@@ -26,6 +25,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html', {'title': 'О нас'})
+
 
 # def create_recipe(request):
 #     form = CreteRecipe(request.POST)
@@ -81,6 +81,7 @@ def recipes_by_category(request, category_id):
 def category(request, category):
     category = get_object_or_404(Category)
     return render(request, 'category.html', {'category': category})
+
 
 def search_recipes(request):
     query = request.POST.get('query')
